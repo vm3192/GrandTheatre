@@ -122,8 +122,8 @@ h6 {
 
 @font-face {
   font-family: 'icomoon';
-  src: url("fonts/icomoon.eot?3kfs6");
-  src: url("fonts/icomoon.eot?3kfs6#iefix") format("embedded-opentype"), url("fonts/icomoon.ttf?3kfs6") format("truetype"), url("fonts/icomoon.woff?3kfs6") format("woff"), url("fonts/icomoon.svg?3kfs6#icomoon") format("svg");
+  src: url("fonts/icomoon.eot?ptiv20");
+  src: url("fonts/icomoon.eot?ptiv20#iefix") format("embedded-opentype"), url("fonts/icomoon.ttf?ptiv20") format("truetype"), url("fonts/icomoon.woff?ptiv20") format("woff"), url("fonts/icomoon.svg?ptiv20#icomoon") format("svg");
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -142,6 +142,10 @@ h6 {
   /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-star:before {
+  content: "\e90b";
 }
 
 .icon-search:before {
@@ -693,8 +697,9 @@ h6 {
 .production__row {
   text-align: right;
   white-space: nowrap;
-  overflow: auto;
   overflow-y: hidden;
+  overflow-x: auto;
+  word-spacing: -3px;
 }
 
 .production__item {
@@ -703,7 +708,6 @@ h6 {
   color: #ffffff;
   height: 550px;
   position: relative;
-  margin: 0 -2px;
 }
 
 .production__item:hover .production__item-mask {
@@ -786,6 +790,73 @@ h6 {
           transform: translate(-50%, -50%);
 }
 
+.awards {
+  width: 1110px;
+  margin: 0 auto 150px;
+  background: url(../img/awards_bg.jpg) center/cover no-repeat;
+  min-height: 550px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.awards__inner {
+  max-width: 825px;
+  margin: 0 auto;
+}
+
+.awards__tabs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.awards__nav-btn {
+  display: block;
+  background: none;
+  font-weight: bold;
+  font-size: 72px;
+  line-height: 136.11111%;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #D1A954;
+}
+
+.awards__content {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 540px;
+          flex: 0 1 540px;
+}
+
+.awards__item {
+  display: none;
+}
+
+.awards__item.active {
+  display: block;
+}
+
+.awards__item-rating {
+  margin-bottom: 25px;
+}
+
+.awards__item-text {
+  font-family: Open Sans;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 150%;
+  color: #ffffff;
+}
+
 @media (max-width: 1450px) {
   .container {
     max-width: 869px;
@@ -839,6 +910,25 @@ h6 {
     padding-left: 80px;
     margin: 0 auto;
   }
+
+  .awards {
+    width: 100%;
+    background: url(../img/awards_bg2.png) center/cover no-repeat;
+  }
+
+  .awards__inner {
+    max-width: 690px;
+  }
+
+  .awards__content {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 450px;
+            flex: 0 1 450px;
+  }
+
+  .awards__item-text {
+    font-size: 34px;
+  }
 }
 
 @media (max-width: 991px) {
@@ -877,6 +967,24 @@ h6 {
 
   .production__title {
     margin-bottom: 60px;
+  }
+
+  .awards {
+    margin-bottom: 90px;
+  }
+
+  .awards__inner {
+    max-width: 570px;
+  }
+
+  .awards__content {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 388px;
+            flex: 0 1 388px;
+  }
+
+  .awards__item-text {
+    font-size: 29px;
   }
 
   body.lock {
@@ -1011,6 +1119,24 @@ h6 {
   .production__inner {
     padding: 0 30px;
   }
+
+  .awards {
+    margin-bottom: 80px;
+  }
+
+  .awards__inner {
+    max-width: 510px;
+  }
+
+  .awards__content {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 330px;
+            flex: 0 1 330px;
+  }
+
+  .awards__item-text {
+    font-size: 25px;
+  }
 }
 
 @media (max-width: 576px) {
@@ -1025,5 +1151,36 @@ h6 {
 
   .production__inner {
     padding: 0 15px;
+  }
+
+  .awards {
+    padding: 0 15px;
+  }
+
+  .awards__tabs {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+
+  .awards__tabs-nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    width: 100%;
+    margin-bottom: 40px;
+  }
+
+  .awards__nav-btn {
+    font-size: 35px;
+  }
+
+  .awards__content {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 auto;
+            flex: 0 1 auto;
   }
 }
